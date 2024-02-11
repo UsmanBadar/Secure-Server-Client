@@ -1,6 +1,6 @@
 # Secure Server - Client 
 
-This app is built with vanilla Python. This has a server and client architecture with encrypted communication using SSL on a local machine. It supports basic CRUD operations for a key value vault. It also uses hashing to check data integrity in storage. Basic rate limiting is also implemented to avoid Denial of Service scenario. It also uses multi-threading to handle several clients concurrently. Client gui is built with Tkinter.
+This app is built with vanilla Python. This has a server and client architecture with encrypted communication using SSL on a local machine. It supports basic CRUD operations for a key value vault. It also uses hashing to check data integrity in storage. Basic rate limiting is also implemented to avoid Denial of Service scenario. It also uses multi-threading to concurrently handle several clients. Client gui is built with Tkinter.
 
 ## Features
 
