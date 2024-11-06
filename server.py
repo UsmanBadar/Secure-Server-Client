@@ -114,9 +114,7 @@ class Server:
             except Exception as e:
                 self.logger.error(f"Unexpected error from {client_id}: {str(e)}")
                 send_message(client_socket, "Error: Server encountered an expected error")
-
-
-        
+  
     def rate_limit(self, client_id):
         with self.request_timestamps_lock:
             now = time.time()
@@ -150,8 +148,7 @@ class Server:
         with self.kv_store_lock:
             if key not in self.kv_store:
                 send_message(client_socket, "DELETE: Key does not exist")
-
-            if key in self.kv_store:
+            elif key in self.kv_store:
                 del self.kv_store[key]
                 send_message(client_socket, "DELETE: OK")
             else:
@@ -178,9 +175,6 @@ class Server:
                     break  
         finally:
             self.shutdown()
-
-
-
 
     def shutdown(self):
         for thread in self.client_threads:
