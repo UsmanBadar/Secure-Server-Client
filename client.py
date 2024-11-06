@@ -24,7 +24,6 @@ class Client:
         # Loading the server certificate
         self.context.load_verify_locations('cert.pem')
 
-
     # Handling connection with server
     def connect(self, client_id):
         try:
@@ -35,13 +34,12 @@ class Client:
             response = receive_message(self.client_socket)
 
             if response == "CONNECT: ERROR" or response == "CONNECT: ID already taken":
-                self.disconnect()       
+                self.close()       
                 return response
             
             return response
         except Exception as e:
             return f"Failed to connect: {str(e)}. Try again"
-
 
     # PUT method    
     def put(self, key, value):
@@ -62,7 +60,6 @@ class Client:
                 return "An error occurred"
         except OSError as e:
             return f"Failed to process command: {str(e)}"
- 
  
     # GET method     
     def get(self, key):
@@ -89,7 +86,6 @@ class Client:
         except OSError as e:
             return f"Failed to process command: {str(e)}"
  
- 
     # DELETE method 
     def delete(self, key):
         try: 
@@ -103,7 +99,6 @@ class Client:
         except OSError as e:
             return f"Failed to process command: {str(e)}"
 
-
     # DISCONNECT method 
     def disconnect(self):
         if self.client_socket:
@@ -116,7 +111,6 @@ class Client:
                 return f"Failed to process command: {str(e)}"
         else:
             return "Connection not established"
-
 
     # For closing the socket
     def close(self):
