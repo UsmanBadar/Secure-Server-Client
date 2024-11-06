@@ -1,21 +1,21 @@
-# Secure Server - Client 
+# Secure Server - Client
 
 This app is built with vanilla Python. This has a server and client architecture with encrypted communication using SSL on a local machine. It supports basic CRUD operations for a key value vault. It also uses hashing to check data integrity in storage. Basic rate limiting is also implemented to avoid Denial of Service scenario. It also uses multi-threading to concurrently handle several clients. Client gui is built with Tkinter.
 
 ## Features
 
-- Secure communication between client and server using SSL.
-- Key-value store operations: PUT, GET, DELETE
-- GUI for client interactions.
+-   Secure communication between client and server using SSL.
+-   Key-value store operations: PUT, GET, DELETE
+-   GUI for client interactions.
 
 ## Prerequisites
 
-- Python 3.x installed on your system.
-- OpenSSL for generating SSL certificates.
+-   Python 3.x installed on your system.
+-   OpenSSL for generating SSL certificates.
 
 ## Installation
 
-Clone the repository: 
+Clone the repository:
 
 ```
 git clone <repository-url>
@@ -55,6 +55,20 @@ chmod +x startClient.sh
 ```
 
 Replace `<host>` with the server's hostname or IP address and `<port>` with the port number the server is listening on.
+
+### Running the unit tests
+
+Use the following commands to run the unit tests.
+
+```bash
+chmod +x testServer.sh
+./testServer.sh
+```
+
+```bash
+chmod +x testClient.sh
+./testClient.sh
+```
 
 ## Usage
 
